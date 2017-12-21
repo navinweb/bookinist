@@ -1,15 +1,14 @@
 @extends('layout')
 
 @section('content')
-    <h1>Add User</h1>
+    <h1>Add Book</h1>
 
-    <form action="/users" method="post">
+    <form action="/books" method="post">
         {{ csrf_field() }}
-        <p><input type="text" name="name" placeholder="name"></p>
-        <p><input type="email" name="email" placeholder="email"></p>
-        <p><input type="password" name="password" placeholder="password"></p>
+        <p><input type="text" name="title" placeholder="title"></p>
+        <p><textarea name="text" id="text" cols="30" rows="10" placeholder="Text"></textarea></p>
         <p>
-            <button type="submit">Add User</button>
+            <button type="submit">Add Book</button>
         </p>
     </form>
 

@@ -9,8 +9,35 @@
 </head>
 <body>
 
-@yield('content')
+<nav>
+    <div class="container">
+        <div class="logo">
+            <a href="/">Bookinist</a>
+        </div>
+        <ul class="menu-top">
+            <li><a href="/">Home</a></li>
+            <li><a href="/users">Users</a></li>
+            <li><a href="/users/create">Registration</a></li>
+            <li><a href="/books">Books</a></li>
+            <li><a href="/books/create">Add Book</a></li>
+        </ul>
+    </div>
+</nav>
 
-<link rel="stylesheet" href="/public/css/app.css">
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                @yield('content')
+            </div>
+            <div class="col-md-4 col-lg-offset-2">
+                <h2>Sidebar</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="/css/app.css">
+<script src="/js/common.js"></script>
 </body>
 </html>

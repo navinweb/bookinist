@@ -1,3 +1,5 @@
-/**
- * Created by nmode on 12/12/2017.
- */
+window.$ = window.jQuery = require('jquery');
+
+$(document).ready(function(){
+    console.log('123');
+});

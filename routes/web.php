@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@home');
+
+Route::get('about', 'PagesController@about');
 
 Route::get('users', 'UsersController@index');
+Route::get('users/create', 'UsersController@create');
 Route::post('users', 'UsersController@store');
+
+Route::get('books', 'BooksController@index');
+Route::get('books/create', 'BooksController@create');
+Route::post('books', 'BooksController@store');
+Route::get('books/{book_id}', 'BooksController@show');
+
