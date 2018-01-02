@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Books;
+use App\Comment;
+use App\Book;
 use Illuminate\Http\Request;
 
-class BooksController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +15,7 @@ class BooksController extends Controller
      */
     public function index()
     {
-        $books = Books::latest()->get();
-        return view('books/index', [
-            'books'	=> $books
-        ]);
+        //
     }
 
     /**
@@ -27,7 +25,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        return view('books/create');
+        //
     }
 
     /**
@@ -36,17 +34,14 @@ class BooksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($book_id, Book $book)
     {
+
         $this->validate(request(), [
-            'title' =>  'required|min:2',
-            'text' => 'required|min:250',
+            'body'  =>  'min:4'
         ]);
 
-        Books::create(request([
-            'title',
-            'text',
-        ]));
+        $book->addComment($book_id);
 
         return back();
     }
@@ -54,27 +49,21 @@ class BooksController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Books  $books
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show($book_id)
+    public function show(Comment $comment)
     {
-        $book = Books::find($book_id);
-        $books = Books::all();
-
-        return view('books/show', [
-            'books'	=> $books,
-            'book'	=> $book
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Books  $books
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Books $books)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -83,10 +72,10 @@ class BooksController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Books  $books
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Books $books)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -94,10 +83,10 @@ class BooksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Books  $books
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Books $books)
+    public function destroy(Comment $comment)
     {
         //
     }

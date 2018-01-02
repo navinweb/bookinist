@@ -11,16 +11,22 @@
 |
 */
 
+//PAGES
 Route::get('/', 'PagesController@home');
-
 Route::get('about', 'PagesController@about');
 
+//USERS
 Route::get('users', 'UsersController@index');
 Route::get('users/create', 'UsersController@create');
 Route::post('users', 'UsersController@store');
 
-Route::get('books', 'BooksController@index');
-Route::get('books/create', 'BooksController@create');
-Route::post('books', 'BooksController@store');
-Route::get('books/{book_id}', 'BooksController@show');
+//BOOKS
+Route::get('books', 'BookController@index');
+Route::get('books/create', 'BookController@create');
+Route::post('books', 'BookController@store');
+Route::get('books/{book_id}', 'BookController@show');
 
+//COMMENTS
+Route::post('comments/{book_id}', 'CommentController@store');
+
+Auth::routes();
