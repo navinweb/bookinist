@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Add Book</h1>
+    <h2>Add Book</h2>
+    <hr>
 
     <form action="/books" method="post">
         {{ csrf_field() }}
