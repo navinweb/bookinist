@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Book;
 
-class PagesController extends BaseController
+class PagesController extends Controller
 {
 
     function about() {

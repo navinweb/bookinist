@@ -6,7 +6,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-class PostController extends BaseController
+class PostController extends Controller
 {
 
     /**
