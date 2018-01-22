@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Book;
 use Illuminate\Http\Request;
 
-class BookController extends Controller
+class BookController extends BaseController
 {
 
     public function __construct()
     {
+        parent::__construct();
         $this->middleware('auth')->except('index', 'show');
     }
-
 
     /**
      * Display a listing of the resource.
@@ -22,8 +22,9 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::latest()->get();
+
         return view('books/index', [
-            'books'	=> $books
+            'books'	=> $books,
         ]);
     }
 
