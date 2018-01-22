@@ -29,4 +29,10 @@ Route::get('books/{book_id}', 'BookController@show');
 //COMMENTS
 Route::post('comments/{book_id}', 'CommentController@store');
 
+//POSTS
+Route::get('posts', 'PostController@index');
+Route::get('posts/create', 'PostController@create');
+Route::post('posts', 'PostController@store');
+
+
 Auth::routes();
