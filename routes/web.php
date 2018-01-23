@@ -11,6 +11,10 @@
 |
 */
 
+
+$stripe = resolve('App\Billing\Stripe');
+
+
 //PAGES
 Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
