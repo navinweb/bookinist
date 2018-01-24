@@ -75,6 +75,8 @@ class RegisterController extends Controller
             auth()->login($user);
             \Mail::to($user)->send(new Welcome($user));
 
+            session()->flash('message', 'Thanks for singing up');
+
             return $user;
 
         }else{
