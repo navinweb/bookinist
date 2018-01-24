@@ -37,6 +37,9 @@ Route::post('comments/{book_id}', 'CommentController@store');
 Route::get('posts', 'PostController@index');
 Route::get('posts/create', 'PostController@create');
 Route::post('posts', 'PostController@store');
+Route::get('posts/{post_id}', 'PostController@show');
 
+//TAGS
+Route::get('posts/tag/{tag}', 'TagsController@index');
 
 Auth::routes();

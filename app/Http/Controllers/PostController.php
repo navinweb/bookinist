@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -16,6 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
+
         $posts = Post::latest()
             ->filter(request(['month', 'year']))
             ->get();
@@ -50,8 +52,9 @@ class PostController extends Controller
      * @param  \App\Post $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($post_id)
     {
+        $post = Post::find($post_id);
         return view('posts.show', compact('post'));
     }
 
