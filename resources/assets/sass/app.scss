@@ -1,0 +1,44 @@
+// Variables
+@import "variables";
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+  background-color: #f5f8f8;
+}
+
+.menu-top {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
+
+  li {
+    a {
+      margin-right: 40px;
+      padding: 20px 0;
+      display: inline-block;
+    }
+  }
+}
+
+.logo a {
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-size: 40px;
+  padding: 20px 0;
+  transition: all .5s;
+  text-decoration: none;
+
+  &:hover {
+    letter-spacing: 0.1em;
+  }
+}
+
+.books-list {
+  margin: 0;
+  padding-left: 15px;
+}
